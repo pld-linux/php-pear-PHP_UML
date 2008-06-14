@@ -1,0 +1,23 @@
+--- PHP_UML-0.4.4/usr/share/pear/PHP/UML.php~	2008-06-14 10:03:42.362459752 +0000
++++ PHP_UML-0.4.4/usr/share/pear/PHP/UML.php	2008-06-14 10:07:01.439333477 +0000
+@@ -20,13 +20,13 @@
+  */
+ 
+ require_once 'PEAR/Exception.php';
+-require_once 'UML/PHP/Parser.php';
+-require_once 'UML/Metamodel/EMOF.php';
+-require_once 'UML/Metamodel/PHP.php';
+-require_once 'UML/XMI/Builder.php';
+-require_once 'UML/XMI/AbstractBuilder.php';
+-require_once 'UML/XMI/BuilderImpl1.php';
+-require_once 'UML/XMI/BuilderImpl2.php';
++require_once 'PHP/UML/PHP/Parser.php';
++require_once 'PHP/UML/Metamodel/EMOF.php';
++require_once 'PHP/UML/Metamodel/PHP.php';
++require_once 'PHP/UML/XMI/Builder.php';
++require_once 'PHP/UML/XMI/AbstractBuilder.php';
++require_once 'PHP/UML/XMI/BuilderImpl1.php';
++require_once 'PHP/UML/XMI/BuilderImpl2.php';
+ 
+ 
+ /**
