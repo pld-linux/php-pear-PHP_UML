@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - produce an UML/XMI representation of the classes and packages found on system
 Summary(pl.UTF-8):	%{_pearname} - tworzenie struktury UML/XMI klas i pakietów znalezionych w systemie
 Name:		php-pear-%{_pearname}
-Version:	0.5.2
+Version:	1.5.2
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	80e533a3b6b44cad333306707a855730
+# Source0-md5:	9598c93f17ebc5a84b5450f039fa0427
 URL:		http://pear.php.net/package/PHP_UML/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -77,9 +77,9 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-AutoReq:	no
 Requires:	%{name} = %{version}-%{release}
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
