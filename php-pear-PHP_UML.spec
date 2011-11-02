@@ -1,22 +1,24 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		PHP
-%define		_subclass	UML
-%define		_status		beta
+%define		_status		stable
 %define		_pearname	PHP_UML
 Summary:	%{_pearname} - produce an UML/XMI representation of the classes and packages found on system
 Summary(pl.UTF-8):	%{_pearname} - tworzenie struktury UML/XMI klas i pakietów znalezionych w systemie
 Name:		php-pear-%{_pearname}
-Version:	0.4.4
+Version:	1.6.0
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	6b64ab7c45f2e657bb0411057382dbc7
-Patch0:		%{name}-paths.patch
+# Source0-md5:	a200a5f716527dd2bd75f4a988417841
 URL:		http://pear.php.net/package/PHP_UML/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
+Requires:	php-pear-Console_CommandLine
+Requires:	php-spl
+Requires:	php-xsl
+Obsoletes:	php-pear-PHP_UML-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -74,23 +76,8 @@ PHP_UML:
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-AutoReq:	no
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
-%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -106,7 +93,4 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/PHP/UML
 %{php_pear_dir}/PHP/UML.php
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/PHP_UML
+%{php_pear_dir}/data/PHP_UML
