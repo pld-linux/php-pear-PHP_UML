@@ -1,11 +1,11 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
 %define		_pearname	PHP_UML
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - produce an UML/XMI representation of the classes and packages found on system
 Summary(pl.UTF-8):	%{_pearname} - tworzenie struktury UML/XMI klas i pakietów znalezionych w systemie
 Name:		php-pear-%{_pearname}
 Version:	1.6.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -14,10 +14,10 @@ URL:		http://pear.php.net/package/PHP_UML/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	php(spl)
+Requires:	php(xsl)
 Requires:	php-pear
 Requires:	php-pear-Console_CommandLine
-Requires:	php-spl
-Requires:	php-xsl
 Obsoletes:	php-pear-PHP_UML-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
