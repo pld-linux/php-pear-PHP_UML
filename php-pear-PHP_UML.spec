@@ -1,6 +1,5 @@
 %define		_status		stable
 %define		_pearname	PHP_UML
-%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - produce an UML/XMI representation of the classes and packages found on system
 Summary(pl.UTF-8):	%{_pearname} - tworzenie struktury UML/XMI klas i pakietów znalezionych w systemie
 Name:		php-pear-%{_pearname}
